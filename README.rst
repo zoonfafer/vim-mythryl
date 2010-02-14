@@ -6,8 +6,28 @@ Introduction
 ------------
 
 ``vim-mythryl`` provides:
-- Mythryl syntax highlighting for ``*.pkg``, ``*.api`` and ``*.my`` files
-- Mythryl's ``make6`` syntax highlighting for ``*.make6`` files
+        - Mythryl syntax highlighting for ``*.pkg``, ``*.api`` and ``*.my`` [*]_ files , and
+        - Mythryl's ``make6`` syntax highlighting for ``*.make6`` files.
+
+.. [*] Please note that ``.my`` is *not* an official suffix for a Mythryl script!
+
+
+Installation
+------------
+
+Just copy ``syntax/*.vim`` and ``ftdetect/mythryl.vim`` to ``~/.vim/``::
+
+        $ cd vim-mythryl
+        $ ls
+        COPYING  ftdetect/  syntax/  README.rst
+        $ cp -rt ~/.vim ftdetect/ syntax/
+
+
+TODO
+----
+
+- create "indent" files for Mythryl and ``make6``.
+- "complete" the syntax highlighting...
 
 
 License
@@ -15,7 +35,7 @@ License
 
 GPLv3. Copyright (c) 2010 vim-mythryl authors.
 
-See the COPYING file provided with the source distribution for full details.
+See the ``COPYING`` file provided with the source distribution for full details.
 
 
 Authors
@@ -27,8 +47,9 @@ Authors
 Credits
 -------
 
-- Thanks to Cynbe ru Taren for creating the `Mythryl`__ language. (`github page`__)
+- Thanks to `Cynbe ru Taren`__ for creating the `Mythryl`__ language. (`github page`__)
 
+__ http://muq.org/~cynbe/
 __ http://mythryl.org
 __ http://github.com/mythryl/mythryl
 
