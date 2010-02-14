@@ -6,10 +6,8 @@ Introduction
 ------------
 
 ``vim-mythryl`` provides:
-        - Mythryl syntax highlighting for ``*.pkg``, ``*.api`` and ``*.my`` [*]_ files , and
-        - Mythryl's ``make6`` syntax highlighting for ``*.make6`` files.
-
-.. [*] Please note that ``.my`` is *not* an official suffix for a Mythryl script!
+        - Mythryl syntax highlighting for ``*.pkg``, ``*.api``, ``*.my``  and ``*.mythryl`` [*]_ files , and
+        - Mythryl's ``make6`` syntax highlighting for ``*.make6`` [*]_ files.
 
 
 Installation
@@ -26,16 +24,27 @@ Just copy ``syntax/*.vim`` and ``ftdetect/mythryl.vim`` to ``~/.vim/``::
 TODO
 ----
 
-- create "indent" files for Mythryl and ``make6``.
-- "complete" the syntax highlighting...
+- Create "indent" files for Mythryl according to the `Coding Conventions <http://mythryl.org/my-Preface-11.html>`_ [#]_ [#]_ [#]_ [#]_ [#]_ [#]_ [#]_ [#]_ [#]_ and ``make6``.
+- Support the remaining syntax classes.
+- Keep the syntax files clean and readable.
+
+.. [#] http://mythryl.org/my-Indentation.html
+.. [#] http://mythryl.org/my-Line_stuff_up.html
+.. [#] http://mythryl.org/my-Case_expressions.html
+.. [#] http://mythryl.org/my-Record_expressions.html
+.. [#] http://mythryl.org/my-Except_statements.html
+.. [#] http://mythryl.org/my-Function_definitions.html
+.. [#] http://mythryl.org/my-If_statements.html
+.. [#] http://mythryl.org/my-_____-2.html
+.. [#] http://mythryl.org/my-Commenting.html
 
 
-License
+Licence
 -------
 
-GPLv3. Copyright (c) 2010 vim-mythryl authors.
+GNU General Public License version 3. Copyright © 2010 ``vim-mythryl`` authors.
 
-See the ``COPYING`` file provided with the source distribution for full details.
+Please see the ``COPYING`` file provided with the source distribution for full details.
 
 
 Authors
@@ -62,3 +71,5 @@ See Also
 __ http://github.com/phr/mythryl-mode
         
 
+.. [*] Please note that ``.my`` and ``.mythryl`` are *not* official suffixes for a Mythryl script!
+.. [*] I have also included the match for ``*.standard`` files to be ``make6`` files, since I have seen files with such a suffix and they look like ``make6`` files.
