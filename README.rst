@@ -24,19 +24,29 @@ Just copy ``syntax/*.vim`` and ``ftdetect/mythryl.vim`` to ``~/.vim/``::
 TODO
 ----
 
-- Create "indent" files for Mythryl according to the `Coding Conventions <http://mythryl.org/my-Preface-11.html>`_ [#]_ [#]_ [#]_ [#]_ [#]_ [#]_ [#]_ [#]_ [#]_ and ``make6``.
-- Support the remaining syntax classes.
-- Keep the syntax files clean and readable.
+* Create indent file for Mythryl according to the `Coding Conventions <http://mythryl.org/my-Preface-11.html>`_
+        - Indentation_ 
+        - `Line stuff up`_
+        - `Case expressions`_
+        - `Record expressions`_
+        - `Except statements`_
+        - `Function definitions`_
+        - `If statements`_
+        - `?? ::`_
+        - Commenting_
+* Create indent file for ``make6``.
+* Support the remaining syntax classes.
+* Keep the syntax files clean and readable.
 
-.. [#] http://mythryl.org/my-Indentation.html
-.. [#] http://mythryl.org/my-Line_stuff_up.html
-.. [#] http://mythryl.org/my-Case_expressions.html
-.. [#] http://mythryl.org/my-Record_expressions.html
-.. [#] http://mythryl.org/my-Except_statements.html
-.. [#] http://mythryl.org/my-Function_definitions.html
-.. [#] http://mythryl.org/my-If_statements.html
-.. [#] http://mythryl.org/my-_____-2.html
-.. [#] http://mythryl.org/my-Commenting.html
+.. _Indentation: http://mythryl.org/my-Indentation.html
+.. _Line stuff up: http://mythryl.org/my-Line_stuff_up.html
+.. _Case expressions: http://mythryl.org/my-Case_expressions.html
+.. _Record expressions: http://mythryl.org/my-Record_expressions.html
+.. _Except statements: http://mythryl.org/my-Except_statements.html
+.. _Function definitions: http://mythryl.org/my-Function_definitions.html
+.. _If statements: http://mythryl.org/my-If_statements.html
+.. _`?? ::`: http://mythryl.org/my-_____-2.html
+.. _Commenting: http://mythryl.org/my-Commenting.html
 
 
 Licence
