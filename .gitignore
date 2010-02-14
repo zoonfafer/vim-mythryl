@@ -1,0 +1,17 @@
+.*.swp
+*~
+.svn
+*.o
+*.hi
+*.pyc
+*.pdf
+*.out
+*.log
+*.class
+*.o7
+*.COMPILE_LOG
+*.INDEX
+*.LINKARGS
+tmp-make7-pid-*-export.make6
+tmp-make7-pid-*-export.pkg
+tmp-make7-pid-*.OH7_FILES_TO_LOAD
