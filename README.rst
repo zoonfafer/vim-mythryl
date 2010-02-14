@@ -27,7 +27,7 @@ Authors
 Credits
 -------
 
-- Thanks to Cynbe ru Taren for creating the `Mythryl`_ language. (`github page`_)
+- Thanks to Cynbe ru Taren for creating the `Mythryl`__ language. (`github page`__)
 
 __ http://mythryl.org
 __ http://github.com/mythryl/mythryl
@@ -36,7 +36,7 @@ __ http://github.com/mythryl/mythryl
 See Also
 --------
 
-- `mythryl-mode`_ for Emacs by Phil Rand.
+- `mythryl-mode`__ for Emacs by Phil Rand.
 
 __ http://github.com/phr/mythryl-mode
         
