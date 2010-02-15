@@ -54,7 +54,7 @@ TODO
 Licence
 -------
 
-GNU General Public License version 3. Copyright (c) 2010 ``vim-mythryl`` authors.
+GNU General Public License version 3. Copyright © 2010 ``vim-mythryl`` authors.
 
 Please see the ``COPYING`` file provided with the source distribution for full details.
 
