@@ -10,6 +10,10 @@ Introduction
         - Mythryl's ``make6`` syntax highlighting for ``*.make6`` [*]_ files.
 
 
+.. [*] Please note that ``.my`` and ``.mythryl`` are *not* official suffixes for a Mythryl script!
+.. [*] I have also included the match for ``*.standard`` files to be ``make6`` files, since I have seen files with such a suffix and they look like ``make6`` files.
+
+
 Installation
 ------------
 
@@ -27,5 +31,3 @@ Authors
 - Jeffrey Lau <vim@NOSPAMjlau.tk>
 
 
-.. [*] Please note that ``.my`` and ``.mythryl`` are *not* official suffixes for a Mythryl script!
-.. [*] I have also included the match for ``*.standard`` files to be ``make6`` files, since I have seen files with such a suffix and they look like ``make6`` files.
