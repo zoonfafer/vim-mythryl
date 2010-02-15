@@ -3,8 +3,8 @@
 " Filenames:    *.api, *.pkg, *.my, *.mythryl
 " Maintainer:   Jeffrey Lau <vim@NOSPAMjlau.tk>
 " URL:          http://github.com/zoonfafer/vim-mythryl
-" Last Change:  2009 Oct 07 - attempt to create a syntax file (JL)
-"		2010 Feb 15 - attempt to start from scratch (JL)
+" History:	2010 Feb 15 - attempt to start from scratch (JL)
+"		2009 Oct 07 - attempt to create a syntax file (JL)
 
 
 " For version 5.x: Clear all syntax items
