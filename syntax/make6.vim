@@ -27,15 +27,16 @@ syn case match
 if version >= 508 || !exists("did_make6_syn_inits")
 	if version < 508
 		let did_make6_syn_inits = 1
-		command -nargs=+ hl hi link <args>
+		command -nargs=+ HL hi link <args>
 	else
-		command -nargs=+ hl hi def link <args>
+		command -nargs=+ HL hi def link <args>
 	endif
 
 	" TODO: insert highlighting stuff here
-	hl m6Comment	Comment
-	hl m6Error	Error
+	HL m6Comment	Comment
+	HL m6Error	Error
 
+	delcommand HL
 endif
 
 let b:current_syntax = "make6"

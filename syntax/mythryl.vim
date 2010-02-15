@@ -27,15 +27,16 @@ syn case match
 if version >= 508 || !exists("did_my_syntax_inits")
 	if version < 508
 		let did_my_syntax_inits = 1
-		command -nargs=+ hl hi link <args>
+		command -nargs=+ HL hi link <args>
 	else
-		command -nargs=+ hl hi def link <args>
+		command -nargs=+ HL hi def link <args>
 	endif
 
 	" TODO: insert highlighting stuff here
-	hl myComment	Comment
-	hl myError	Error
+	HL myComment	Comment
+	HL myError	Error
 
+	delcommand HL
 endif
 
 let b:current_syntax = "mythryl"
