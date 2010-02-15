@@ -21,31 +21,11 @@ Just copy ``syntax/*.vim`` and ``ftdetect/mythryl.vim`` to ``~/.vim/``::
         $ cp -rt ~/.vim ftdetect/ syntax/
 
 
-
-
 Authors
 -------
 
 - Jeffrey Lau <vim@NOSPAMjlau.tk>
 
-
-Credits
--------
-
-- Thanks to `Cynbe ru Taren`__ for creating the `Mythryl`__ language. (`github page`__)
-
-__ http://muq.org/~cynbe/
-__ http://mythryl.org
-__ http://github.com/mythryl/mythryl
-
-
-See Also
---------
-
-- `mythryl-mode`__ for Emacs by Phil Rand.
-
-__ http://github.com/phr/mythryl-mode
-        
 
 .. [*] Please note that ``.my`` and ``.mythryl`` are *not* official suffixes for a Mythryl script!
 .. [*] I have also included the match for ``*.standard`` files to be ``make6`` files, since I have seen files with such a suffix and they look like ``make6`` files.
