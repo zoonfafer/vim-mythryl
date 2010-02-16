@@ -7,9 +7,10 @@
 "		2009 Oct 07 - attempt to create a syntax file (JL)
 " 
 " TODO:
-"	- Share regexp definitions with make6, esp. with lowercase &
-"	  mixedcase ID.
-"	  Also share (a subset of) error definitions.
+"	- (High priority / more interesting)
+"	- Implement "mythrylscript" mode if shebang detected --- highlight
+"	  scripting globals, too.
+"	- Implement "expensive" & "cheap" modes.  Pick one for the default.
 "	- Match type declaration.  E.g. ... : String
 "	- Match type declaration *in various contexts* (HARD?)
 "	- Match package sealing.  E.g. package foo : (weak) Foo ...
@@ -29,7 +30,10 @@
 "	  "herein", thunk variables
 "	- Differentiate between predefined symbols & custom symbols, e.g. "->"
 "	  is built-in, whereas "-->" is custom (it has an extra "-" in front.)
-"	- Implement "expensive" & "cheap" modes.  Pick one for the default.
+"	- Share regexp definitions with make6, esp. with lowercase &
+"	  mixedcase ID.
+"	  Also share (a subset of) error definitions.
+"	- (low priority)
 " 
 " FIXME:
 "	- Block-level delimiters seem to get out-of-sync
