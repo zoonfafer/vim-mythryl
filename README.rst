@@ -20,13 +20,13 @@ Just copy ``syntax/*.vim`` and ``ftdetect/mythryl.vim`` to ``~/.vim/``::
         $ cd vim-mythryl
         $ ls
         COPYING  ftdetect/  syntax/  README.rst
-        $ cp -rt ~/.vim ftdetect/ syntax/
+        $ cp -rut ~/.vim ftdetect/ syntax/
 
 
 TODO
 ----
 
-* Create indent file for Mythryl according to the `Coding Conventions <http://mythryl.org/my-Preface-11.html>`_
+* Create indent file (**Help needed!  I don't know anything about auto-indenting for Vim.**) for Mythryl according to the `Coding Conventions <http://mythryl.org/my-Preface-11.html>`_
         - Indentation_ 
         - `Line stuff up`_
         - `Case expressions`_
@@ -36,7 +36,8 @@ TODO
         - `If statements`_
         - `?? ::`_
         - Commenting_
-* Create indent file for ``make6``.
+* Support "scripting" mode for Mythryl, which also highlights the "scripting globals", and is switched on when the shebang line is detected. (should be easy)
+* **(deprecated)** Create indent file for ``make6``.
 * Support the remaining syntax classes.
 * Keep the syntax files clean and readable.
 
