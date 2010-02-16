@@ -7,7 +7,7 @@ Introduction
 
 ``vim-mythryl`` provides:
         - Mythryl syntax highlighting for ``*.pkg``, ``*.api``, ``*.my``  and ``*.mythryl`` [*]_ files , and
-        - Mythryl's ``make6`` syntax highlighting for ``*.make6`` files.  (I have also included the match for ``*.standard`` files to be ``make6`` files, since I have seen files with such a suffix and they look like ``make6`` files.)
+        - **(deprecated)** Mythryl's ``make6`` syntax highlighting for ``*.make6`` files.  (I have also included the match for ``*.standard`` files to be ``make6`` files, since I have seen files with such a suffix and they look like ``make6`` files.)
 
 .. [*] Please note that ``.my`` and ``.mythryl`` are *not* official suffixes for a Mythryl script!
 
