@@ -9,6 +9,7 @@
 " TODO:
 "	- (High priority / more interesting)
 "	- Implement "expensive" & "cheap" modes.  Pick one for the default.
+"	- Match regular expression escape characters inside .// ?
 "	- Match type declaration.  E.g. ... : String
 "	- Match type declaration *in various contexts* (HARD?)
 "	- Match package sealing.  E.g. package foo : (weak) Foo ...
