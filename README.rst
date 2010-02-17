@@ -6,10 +6,11 @@ Introduction
 ------------
 
 ``vim-mythryl`` provides:
-        - Mythryl syntax highlighting for ``*.pkg``, ``*.api``, ``*.my``  and ``*.mythryl`` [*]_ files , and
-        - **(deprecated)** Mythryl's ``make6`` syntax highlighting for ``*.make6`` files.  (I have also included the match for ``*.standard`` files to be ``make6`` files, since I have seen files with such a suffix and they look like ``make6`` files.)
+        - Mythryl syntax highlighting for ``*.pkg`` and ``*.api``,  files,
+        - Mythryl script-oriented syntax highlighting for files that begin with the shebang line (``#!.*\<mythryl\>``), and
+        - **(deprecated)** Mythryl's ``make6`` syntax highlighting for ``*.make6`` files [*]_ .
 
-.. [*] Please note that ``.my`` and ``.mythryl`` are *not* official suffixes for a Mythryl script!
+.. [*] I have also included the match for ``*.standard`` files to be ``make6`` files, since I have seen files with such a suffix and they look like ``make6`` files.
 
 
 Installation
@@ -36,7 +37,6 @@ TODO
         - `If statements`_
         - `?? ::`_
         - Commenting_
-* Support "scripting" mode for Mythryl, which also highlights the "scripting globals", and is switched on when the shebang line is detected. (should be easy)
 * **(deprecated)** Create indent file for ``make6``.
 * Support the remaining syntax classes.
 * Keep the syntax files clean and readable.

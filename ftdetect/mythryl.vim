@@ -1,11 +1,11 @@
 " Mythryl
-autocmd BufNewFile,BufRead *.\(my\|mythryl\|api\|pkg\)	set ft=mythryl
-autocmd BufNewFile,BufRead *.\(make6\|standard\)	set ft=make6
+autocmd BufNewFile,BufRead *.\(api\|pkg\) set ft=mythryl
+autocmd BufNewFile,BufRead *.\(make6\|standard\) set ft=make6
 
 " This logic really belongs in scripts.vim... ?
 autocmd BufNewFile,BufRead,StdinReadPost *
 	\ if getline(1) =~ '^#!.*\<mythryl\>' |
-	\   set ft=mythryl |
+	\   set ft=mythryl-script |
 	" \ else |
 	" \   let s:l2 = getline(2) |
 	" \   let s:l3 = getline(3) |

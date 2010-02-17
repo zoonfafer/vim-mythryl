@@ -1,6 +1,6 @@
 " Vim syntax file
 " Language:     Mythryl
-" Filenames:    *.api, *.pkg, *.my, *.mythryl
+" Filenames:    *.api, *.pkg
 " Maintainer:   Jeffrey Lau <vim@NOSPAMjlau.tk>
 " URL:          http://github.com/zoonfafer/vim-mythryl
 " History:	2010 Feb 15 - attempt to start from scratch (JL)
@@ -8,8 +8,6 @@
 " 
 " TODO:
 "	- (High priority / more interesting)
-"	- Implement "mythrylscript" mode if shebang detected --- highlight
-"	  scripting globals, too.
 "	- Implement "expensive" & "cheap" modes.  Pick one for the default.
 "	- Match type declaration.  E.g. ... : String
 "	- Match type declaration *in various contexts* (HARD?)
