@@ -33,11 +33,6 @@
 "	  mixedcase ID.
 "	  Also share (a subset of) error definitions.
 "	- (low priority)
-" 
-" FIXME:
-"	- Block-level delimiters seem to get out-of-sync
-"	  if the start and end are sufficiently far apart
-"	  (i.e. not very).
 
 
 " For version 5.x: Clear all syntax items
@@ -372,6 +367,11 @@ syn region myPackageGenericity transparent
 "--------------------------------------------------------------
 
 " syn sync minlines=500 linebreaks=500
+syn sync match myBraceSync grouphere myBraceBlock "\<{\>"
+syn sync match myBraceSync groupthere NONE "\<}\>"
+
+syn sync match myParenSync grouphere myParenBlock "\<(\>"
+syn sync match myParenSync groupthere NONE "\<)\>"
 
 
 "==============================================================
