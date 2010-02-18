@@ -47,13 +47,15 @@ syn keyword myScriptingGlobal
 	\ factors fields filter fscanf
 	\ getcwd getenv getpid getuid geteuid getppid
 	\ getgid getegid getgroups getlogin getpgrp
+	\ mkdir
 	\ setgid setpgid setsid setuid
 	\ implode in iseven isodd isprime join' join
-	\ lstat now product round shuffle' shuffle
-	\ sleep sort sorted scanf sscanf
+	\ lstat now product rename rmdir round
+	\ shuffle' shuffle sleep sort sorted
+	\ scanf sscanf
 	\ stat strcat strlen strsort struniqsort
 	\ sum system time tolower toupper
-	\ tokens trim uniquesort words
+	\ tokens trim uniquesort unlink words
 	\ dot__qquotes arg0 argv
 	\ isfile isdir ispipe issymlink issocket ischardev isblockdev
 	\ mayread maywrite mayexecute
