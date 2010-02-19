@@ -288,16 +288,17 @@ syn region myString fold contains=myStringEscape
 
 
 """ Character
-syn match myCharEscape contained containedin=myChar
-	\ +\%(\\\%(\^[@A-F\[\\\]^_?]\|['abfnrtv]\|[01]\d\d\|2\%([0-4]\d\|5[0-5]\)\)\)+ 
+let s:CharEscapeId = '\%(\\\%(\\\|\^[@A-F\[\\\]^_?]\|[' . "'" . 'abfnrtv]\|[01]\d\d\|2\%([0-4]\d\|5[0-5]\)\)\)' 
+execute 'syn match myCharEscape contained containedin=myChar' .
+	\ ' +' . s:CharEscapeId . '+'
 
 syn match myCharError	+'[^']*'+
 
-syn region myChar contains=myCharEscape
-	\ matchgroup=myCharDelimiter
-	\ start=+'\%(\%(.\|\\\%(\^[@A-F\[\\\]^_?]\|['abfnrtv]\|[01]\d\d\|2\%([0-4]\d\|5[0-5]\)\)\)'\)\@=+
-	\ skip=+\\\\\|\\'+
-	\ end=+'+
+execute 'syn region myChar contains=myCharEscape' .
+	\ ' matchgroup=myCharDelimiter' .
+	\ ' start=+''\%(\%(.\|' . s:CharEscapeId . '\)''\)\@=+' .
+	\ ' skip=+\\\\\|\\''+' .
+	\ " end=+'+"
 
 
 "==============================================================
