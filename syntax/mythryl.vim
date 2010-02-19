@@ -260,10 +260,19 @@ execute "syn match myTypeOrApiName" .
 "==============================================================
 " Normal String, Shell Command and Character
 "--------------------------------------------------------------
+
+function! s:MakeStringsEscapeId( delim )
+	let delim = a:delim
+	return
+		\ '\\\%(\\\|\^[@A-F\[\\\]^_?]\|[' .
+		\ delim .
+		\ 'abfnrtv]\|[01]\d\d\|2\%([0-4]\d\|5[0-5]\)\)'
+endfunc
+
 """ String
 " Note: Mythryl doesn't allow tab characters in strings...
-syn match myStringEscape contained containedin=myString
-	\ +\\\%(\\\|\^[@A-F\[\\\]^_?]\|["abfnrtv]\|[01]\d\d\|2\%([0-4]\d\|5[0-5]\)\)+
+execute 'syn match myStringEscape contained containedin=myString'
+	\ ' +' . s:MakeStringsEscapeId( "\"" ) . '+'
 
 syn match myStringEscape contained containedin=myString
 	\ +\\$+
@@ -288,7 +297,7 @@ syn region myString fold contains=myStringEscape
 
 
 """ Character
-let s:CharEscapeId = '\%(\\\%(\\\|\^[@A-F\[\\\]^_?]\|[' . "'" . 'abfnrtv]\|[01]\d\d\|2\%([0-4]\d\|5[0-5]\)\)\)' 
+let s:CharEscapeId = s:MakeStringsEscapeId( '''' )
 execute 'syn match myCharEscape contained containedin=myChar' .
 	\ ' +' . s:CharEscapeId . '+'
 
