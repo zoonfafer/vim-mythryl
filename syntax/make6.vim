@@ -1,12 +1,12 @@
 " Vim syntax file
 " Language:	Mythryl's make6
-" Note:		DEPRECATED!!!
-" Filenames:	*.make6, *.standard
 " Maintainer:	Jeffrey Lau <vim@NOSPAMjlau.tk>
+" Last Change:	2010 Feb 16 (<- most likely out-dated)
+" Remark:	(!) probably being phased out in 2--3 years
+"
+" Filenames:	*.make6, *.standard
 " URL:		http://github.com/zoonfafer/vim-mythryl
-" History:	2010 Feb 16 - restored previous attempt & tidied it up (JL)
-"		2010 Feb 15 - attempt to start from scratch (JL)
-"		2009 Dec 26 - attempt to modify ``make.vim'' (JL)
+" Creation:	2009 Dec 26
 
 
 " For version 5.x: Clear all syntax items

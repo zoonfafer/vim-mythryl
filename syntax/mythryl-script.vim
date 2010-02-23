@@ -1,11 +1,12 @@
 " Vim syntax file
 " Language:     Mythryl for scripting
-" Filenames:    N/A
 " Maintainer:   Jeffrey Lau <vim@NOSPAMjlau.tk>
-" URL:          http://github.com/zoonfafer/vim-mythryl
-" History:	2010 Feb 18 - attempt to extend the main syntax (JL)
+" Last Change:	2010 Feb 18 (<- most likely out-dated)
+" Remark:	includes the Mythryl syntax
 " 
-
+" Filenames:	N/A
+" URL:          http://github.com/zoonfafer/vim-mythryl
+" Creation:	2010 Feb 18
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded

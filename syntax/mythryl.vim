@@ -1,10 +1,12 @@
 " Vim syntax file
 " Language:     Mythryl
-" Filenames:    *.api, *.pkg
 " Maintainer:   Jeffrey Lau <vim@NOSPAMjlau.tk>
+" Last Change:	2010 Feb 15 (<- most likely out-dated)
+" Remark:	included by the Mythryl-script syntax
+"
+" Filenames:    *.api, *.pkg
 " URL:          http://github.com/zoonfafer/vim-mythryl
-" History:	2010 Feb 15 - attempt to start from scratch (JL)
-"		2009 Oct 07 - attempt to create a syntax file (JL)
+" Creation:	2009 Oct 07
 " 
 " TODO:
 "	- (High priority / more interesting)
