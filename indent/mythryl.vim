@@ -2,7 +2,7 @@
 " Language:	Mythryl
 " Maintainer:	Jeffrey Lau <vim@NOSPAMjlau.tk>
 " Last Change:	2010 Feb 18 (<- most likely out-dated)
-" Remark:	none yet
+" Remark:	included by the Mythryl-script indent file
 "
 " URL:		http://github.com/zoonfafer/vim-mythryl
 "
