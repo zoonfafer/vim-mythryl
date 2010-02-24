@@ -1,8 +1,11 @@
 " Vim indent file
 " Language:	Mythryl
 " Maintainer:	Jeffrey Lau <vim@NOSPAMjlau.tk>
-" URL:		nil
-" Last Change:	2010 Feb 18 - attempt to start from scratch (JL)
+" Last Change:	2010 Feb 18 (<- most likely out-dated)
+" Remark:	none yet
+"
+" URL:		http://github.com/zoonfafer/vim-mythryl
+"
 
 " Only load this indent file when no other was loaded.
 if exists("b:did_indent")
