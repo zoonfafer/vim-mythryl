@@ -40,6 +40,8 @@ endif
 " Note:	identifiers taken from "package scripting_globals" of:-
 "	   src/lib/core/internal/make7.api
 "	of Mythryl's source distribution.
+" FIXME: do not want to highlight keyword_but_actually_a_package_name::foo
+"	 May want to use ":syn match" instead.
 "--------------------------------------------------------------
 
 syn keyword myScriptingGlobal
