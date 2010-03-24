@@ -6,6 +6,7 @@ autocmd BufNewFile,BufRead *.\(make6\|standard\) set ft=make6
 autocmd BufNewFile,BufRead,StdinReadPost *
 	\ if getline(1) =~ '^#!.*\<mythryl\>' |
 	\   set ft=mythryl-script |
+	\ endif
 	" \ else |
 	" \   let s:l2 = getline(2) |
 	" \   let s:l3 = getline(3) |
@@ -15,4 +16,3 @@ autocmd BufNewFile,BufRead,StdinReadPost *
 	" \   let s:l15 = getline(15) |
 	" \   let s:l20 = getline(20) |
 	" \   unlet s:l2 s:l3 s:l4 s:l5 s:l10 s:l15 s:l20 |
-	\ endif
