@@ -4,6 +4,7 @@
 " Last Change:	2010 Feb 16 (<- most likely out-dated)
 " Remark:	(!) probably being phased out in 2--3 years
 "
+" Script Type:	syntax
 " Filenames:	*.make6, *.standard
 " URL:		http://github.com/zoonfafer/vim-mythryl
 " Creation:	2009 Dec 26

@@ -4,6 +4,7 @@
 " Last Change:	2010 Feb 18 (<- most likely out-dated)
 " Remark:	includes the Mythryl syntax
 " 
+" Script Type:	syntax
 " Filenames:	N/A
 " URL:          http://github.com/zoonfafer/vim-mythryl
 " Creation:	2010 Feb 18

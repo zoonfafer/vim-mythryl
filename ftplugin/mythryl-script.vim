@@ -4,6 +4,7 @@
 " Last Change:	2010 Mar 24 (<- most likely out-dated)
 " Remark:	includes the Mythryl-script ftplugin
 "
+" Script Type:	ftplugin
 " URL:		http://github.com/zoonfafer/vim-mythryl
 "
 

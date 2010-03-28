@@ -1,3 +1,14 @@
+" Vim ftdetect file
+" Language:	Mythryl
+" Maintainer:	Jeffrey Lau <vim@NOSPAMjlau.tk>
+" Last Change:	2010 Mar 25 (<- most likely out-dated)
+" Remark:	
+"
+" Script Type:	ftdetect
+" URL:		http://github.com/zoonfafer/vim-mythryl
+"
+"
+
 " Mythryl
 autocmd BufNewFile,BufRead *.\(api\|pkg\) set ft=mythryl
 autocmd BufNewFile,BufRead *.\(make6\|standard\) set ft=make6

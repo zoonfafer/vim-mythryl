@@ -4,6 +4,7 @@
 " Last Change:	2010 Feb 15 (<- most likely out-dated)
 " Remark:	included by the Mythryl-script syntax
 "
+" Script Type:	syntax
 " Filenames:    *.api, *.pkg
 " URL:          http://github.com/zoonfafer/vim-mythryl
 " Creation:	2009 Oct 07

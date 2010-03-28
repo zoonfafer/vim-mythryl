@@ -4,6 +4,7 @@
 " Last Change:	2010 Feb 25 (<- most likely out-dated)
 " Remark:	includes the Mythryl indent file
 "
+" Script Type:	indent
 " URL:		http://github.com/zoonfafer/vim-mythryl
 "
 
