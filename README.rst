@@ -7,8 +7,10 @@ Introduction
 
 ``vim-mythryl`` provides:
         - Mythryl syntax highlighting for ``*.pkg`` and ``*.api`` files,
-        - Mythryl script-oriented syntax highlighting for files that begin with the shebang line (``#!.*\<mythryl\>``), and
-        - **(deprecated)** Mythryl's ``make6`` syntax highlighting for ``*.make6`` files [*]_ .
+        - Mythryl script-oriented syntax highlighting for files that begin with 
+          the shebang line (``#!.*\<mythryl\>``), and
+        - **(deprecated)** Mythryl's ``make6`` syntax highlighting for 
+          ``*.make6`` files [*]_ .
         - snipMate__ support for Mythryl.
 
 .. [*] I have also included the match for ``*.standard`` files to be ``make6`` files, since I have seen files with such a suffix and they look like ``make6`` files.
@@ -18,12 +20,14 @@ __ http://github.com/msanders/snipmate.vim
 Installation
 ------------
 
-Just copy ``syntax/*.vim`` and ``ftdetect/mythryl.vim`` to ``~/.vim/``::
+Just copy ``{ftplugin,indent,snippets,syntax}/*.vim`` and 
+``ftdetect/mythryl.vim`` to ``~/.vim/``::
 
         $ cd vim-mythryl
         $ ls
-        COPYING  ftdetect/  syntax/  README.rst
-        $ cp -rut ~/.vim ftdetect/ syntax/
+        COPYING  ftdetect/  ftplugin/  indent/  README.rst  snippets/  syntax/
+        $ cp -rut ~/.vim ftdetect/  ftplugin/  indent/  snippets/  syntax/
+ 
 
 
 TODO
@@ -57,11 +61,14 @@ TODO
 Licence
 -------
 
-.. GNU General Public License version 3. Copyright © 2010 ``vim-mythryl`` authors.
+.. GNU General Public License version 3.  Copyright © 2010 ``vim-mythryl`` authors.  All Rights Reserved.
 
-GNU General Public License version 3. Copyright (c) 2010 ``vim-mythryl`` authors.
 
-Please see the ``COPYING`` file provided with the source distribution for full details.
+GNU General Public License version 3.
+Copyright (c) 2010 ``vim-mythryl`` authors.  All Rights Reserved.
+
+Please see the ``COPYING`` file provided with the source distribution for full 
+details.
 
 
 Authors
