@@ -33,7 +33,7 @@ setlocal comments =sn1:/*,mb:*,ex:*/,b:#
 setlocal comments+=fb:- " might be useful...
 
 setlocal noexpandtab
-setlocal formatoptions+=tcroqwan
+setlocal formatoptions+=tcroqwn
 setlocal nolisp
 setlocal smartindent
 setlocal textwidth=78
