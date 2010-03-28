@@ -6,11 +6,13 @@ Introduction
 ------------
 
 ``vim-mythryl`` provides:
-        - Mythryl syntax highlighting for ``*.pkg`` and ``*.api``,  files,
+        - Mythryl syntax highlighting for ``*.pkg`` and ``*.api`` files,
         - Mythryl script-oriented syntax highlighting for files that begin with the shebang line (``#!.*\<mythryl\>``), and
         - **(deprecated)** Mythryl's ``make6`` syntax highlighting for ``*.make6`` files [*]_ .
+        - snipMate__ support for Mythryl.
 
 .. [*] I have also included the match for ``*.standard`` files to be ``make6`` files, since I have seen files with such a suffix and they look like ``make6`` files.
+__ http://github.com/msanders/snipmate.vim
 
 
 Installation
