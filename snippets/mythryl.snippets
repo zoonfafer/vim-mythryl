@@ -114,3 +114,13 @@ snippet main
 		winix::process::success;
 	    };
 	};
+# regexp matching
+snippet =~
+	=~ ./${1:regularexpression}/
+snippet ~
+	=~ ./${1:regularexpression}/
+# scripting
+snippet x
+	exit ${1:0};
+snippet X
+	exit ${1:1};
