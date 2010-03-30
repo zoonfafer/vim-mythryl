@@ -73,8 +73,11 @@ syn cluster myParenBlocks contains=
 
 " Note:  This cluster contains every syntax class that has to be
 " contained in other syntax classes.
+	 " tab errors can only occur in strings, etc.
 syn cluster myNotTop contains=
-	\ myTabError " tab errors can only occur in strings, etc.
+	\ myTabError,
+	\ @myComments,
+	\ myString
 
 
 "==============================================================
@@ -117,7 +120,7 @@ syn match myKeyChar	"=>"
 """ Comma
 " Note: The comma keyword can only occur inside: "", '', #[], [], (), {}
 syn match myCommaError	","
-syn match myCommaError	",\%(\_s*,\)\+" contained containedin=ALL
+syn match myCommaError	",\%(\_s*,\)\+" contained containedin=ALLBUT,@myNotTop
 
 syn match myKeyChar	"," contained containedin=
 	\ myParenBlock,
