@@ -77,7 +77,8 @@ syn cluster myParenBlocks contains=
 syn cluster myNotTop contains=
 	\ myTabError,
 	\ @myComments,
-	\ myString
+	\ myString,
+	\ myRegexp
 
 
 "==============================================================
@@ -103,7 +104,7 @@ else
 
 	syn keyword myKeyword	abstype also and as class class2
 	syn keyword myKeyword	eqtype
-	syn match myKeyword	"for"
+	syn match   myKeyword	"for"
 	syn keyword myKeyword	include
 	syn keyword myKeyword	or
 	syn keyword myKeyword	sharing
@@ -275,6 +276,19 @@ function! s:MakeStringsEscapeId( delim )
 		\ 'abfnrtv]\|[01]\d\d\|2\%([0-4]\d\|5[0-5]\)\)'
 endfunc
 
+""" Regular Expression
+" execute 'syn match myRegexpEscape contained containedin=myRegexp'
+	" \ ' +' . s:MakeStringsEscapeId( '/' ) . '+'
+
+""" TODO: *** regular expression escapes will need LOTS of work !!! ***
+syn match myRegexpEscape contained containedin=myRegexp +\%([.^$|*+?]\|\\\%(\\\|\^[@A-F\[\\\]^_?]\|[/AaBbDdefnrSstvWwZz]\|[01]\d\d\|2\%([0-4]\d\|5[0-5]\)\)\)+
+
+syn region myRegexp contains=myRegexpEscape
+	\ matchgroup=myRegexpDelimiter
+	\ start='\./'
+	\ skip='\\/'
+	\ end=+/+
+
 """ String
 " Note: Mythryl doesn't allow tab characters in strings...
 execute 'syn match myStringEscape contained containedin=myString'
@@ -445,6 +459,10 @@ if version >= 508 || !exists("did_my_syntax_inits")
 	HL myTypeVariable	Special
 
 	""" String, regexp, char
+	HL myRegexp		String
+	HL myRegexpDelimiter	Delimiter
+	HL myRegexpEscape	Special
+
 	HL myString		String
 	HL myStringDelimiter	Delimiter
 	HL myStringEscape	Special
