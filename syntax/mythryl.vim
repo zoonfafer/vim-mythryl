@@ -76,6 +76,9 @@ syn cluster myParenBlocks contains=
 	 " tab errors can only occur in strings, etc.
 syn cluster myNotTop contains=
 	\ myTabError,
+
+syn cluster myFreeText contains=
+	\ @myComments,
 	\ myString,
 	\ myRegexp
 
@@ -120,7 +123,7 @@ syn match myKeyChar	"=>"
 """ Comma
 " Note: The comma keyword can only occur inside: "", '', #[], [], (), {}
 syn match myCommaError	","
-syn match myCommaError	",\%(\_s*,\)\+" contained containedin=ALLBUT,@myNotTop
+syn match myCommaError	",\%(\_s*,\)\+" contained containedin=ALLBUT,@myFreeText
 
 syn match myKeyChar	"," contained containedin=
 	\ myParenBlock,
