@@ -336,12 +336,12 @@ execute 'syn region myChar contains=myCharEscape' .
 " Numbers
 "--------------------------------------------------------------
 
+syn match myFloat	"-\?\d\+\%(\.\d\+\)\?\%([eE]-\?\d\+\)\?"
+syn match myOct		"-\?0[0-7]\+"
 syn match myInt		"-\?\d\+"
 syn match myUnsignedInt	"-\?0u\d\+"
 syn match myHex		"-\?0x[0-9a-fA-F]\+"
 syn match myUnsignedHex	"-\?0ux[0-9a-fA-F]\+"
-syn match myFloat	"-\?\d\+\%(\.\d\+\)\?\%([eE]-\?\d\+\)\?"
-syn match myOct		"-\?0[0-7]\+"
 
 
 "==============================================================
