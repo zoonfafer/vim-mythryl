@@ -76,7 +76,6 @@ syn cluster myParenBlocks contains=
 	 " tab errors can only occur in strings, etc.
 syn cluster myNotTop contains=
 	\ myTabError,
-	\ @myComments,
 	\ myString,
 	\ myRegexp
 
