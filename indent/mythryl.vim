@@ -172,7 +172,12 @@ function! GetMythrylIndent(...)
 	" If previous line is a /* * */ comment,
 	" don't do any autoindent, because Vim's "comments" option
 	" will take care of this case.
-	if prev_line =~ '^\s*/\?\*\+'
+	" If previous line has a bullet ("-"), let Vim do its indent.  The 
+	" reason is that when you are doing bullets, you are most likely 
+	" writing text not code, therefore you would not want to override 
+	" Vim's text-autowrapping magic, etc.
+	if   prev_line =~ '^\s*/\?\*\+'
+	\||  prev_line =~ '^\s*-'
 		let ind = indent('.')
 	endif
 	"}}}-----------------------------------------------------------------
