@@ -309,6 +309,7 @@ syn region myString fold contains=myStringEscape
 	\ end="\""
 
 syn match myTabError contained containedin=myString,myChar +\t+
+syn match myStringContinuation contained containedin=myString /\\\n\s\+\\/
 
 """ Shell
 syn region myString fold contains=myStringEscape
@@ -468,6 +469,7 @@ if version >= 508 || !exists("did_my_syntax_inits")
 	HL myString		String
 	HL myStringDelimiter	Delimiter
 	HL myStringEscape	Special
+	HL myStringContinuation	Special
 
 	HL myChar		String
 	HL myCharDelimiter	Label
