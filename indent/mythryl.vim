@@ -34,8 +34,7 @@ setlocal comments+=fb:- " might be useful...
 
 setlocal noexpandtab
 setlocal formatoptions+=tcroqwn
-setlocal nolisp
-setlocal smartindent
+setlocal nosmartindent
 setlocal textwidth=78
 setlocal shiftwidth=4
 setlocal softtabstop=4
@@ -168,17 +167,22 @@ function! GetMythrylIndent(...)
 
 
 	"{{{-----------------------------------------------------------------
-	" Note Following:  to be matched the last?
+	" Do No Ident For The Following:
+	"
 	" If previous line is a /* * */ comment,
 	" don't do any autoindent, because Vim's "comments" option
 	" will take care of this case.
+	"
+	" If previous line is a # comment, ditto...
+	"
 	" If previous line has a bullet ("-"), let Vim do its indent.  The 
 	" reason is that when you are doing bullets, you are most likely 
 	" writing text not code, therefore you would not want to override 
 	" Vim's text-autowrapping magic, etc.
 	if   prev_line =~ '^\s*/\?\*\+'
+	\||  synIDattr(synID(pnlnum,col('.'),1),'name') =~ "Comment$"
 	\||  prev_line =~ '^\s*-'
-		let ind = indent('.')
+		return -1
 	endif
 	"}}}-----------------------------------------------------------------
 
