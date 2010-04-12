@@ -45,26 +45,55 @@ endif
 "	 May want to use ":syn match" instead.
 "--------------------------------------------------------------
 
-syn keyword myScriptingGlobal
-	\ atod atoi back__ticks basename bash chdir chomp die dirname
-	\ environ eval evali evalf evals evalli evallf evalls exit explode
-	\ factors fields filter fscanf
-	\ getcwd getenv getpid getuid geteuid getppid
-	\ getgid getegid getgroups getlogin getpgrp
-	\ mkdir
-	\ setgid setpgid setsid setuid
-	\ implode in iseven isodd isprime join' join
-	\ lstat now product rename rmdir round
-	\ shuffle' shuffle sleep sort sorted
-	\ scanf sscanf
-	\ stat strcat strlen strsort struniqsort
-	\ sum system time tolower toupper
-	\ tokens trim uniquesort unlink words
-	\ dot__qquotes arg0 argv
-	\ isfile isdir ispipe issymlink issocket ischardev isblockdev
-	\ mayread maywrite mayexecute
-	\ eval_kludge_ref_int eval_kludge_ref_float eval_kludge_ref_string
-	\ eval_kludge_ref_list_int eval_kludge_ref_list_float eval_kludge_ref_list_string
+
+" atod atoi back__ticks basename bash chdir chomp die dirname
+" environ eval evali evalf evals evalli evallf evalls exit explode
+" factors fields filter fscanf
+" getcwd getenv getpid getuid geteuid getppid
+" getgid getegid getgroups getlogin getpgrp
+" mkdir
+" setgid setpgid setsid setuid
+" implode in iseven isodd isprime join' join
+" lstat now product rename rmdir round
+" shuffle' shuffle sleep sort sorted
+" scanf sscanf
+" stat strcat strlen strsort struniqsort
+" sum system time tolower toupper
+" tokens trim uniquesort unlink words
+" dot__qquotes arg0 argv
+" isfile isdir ispipe issymlink issocket ischardev isblockdev
+" mayread maywrite mayexecute
+" eval_kludge_ref_int eval_kludge_ref_float eval_kludge_ref_string
+" eval_kludge_ref_list_int eval_kludge_ref_list_float eval_kludge_ref_list_string
+
+
+let myKeywordList = split( "atod atoi back__ticks basename bash chdir chomp die dirname" .
+	\ " environ eval evali evalf evals evalli evallf evalls exit explode" .
+	\ " factors fields filter fscanf" .
+	\ " getcwd getenv getpid getuid geteuid getppid" .
+	\ " getgid getegid getgroups getlogin getpgrp" .
+	\ " mkdir" .
+	\ " setgid setpgid setsid setuid" .
+	\ " implode in iseven isodd isprime join' join" .
+	\ " lstat now product rename rmdir round" .
+	\ " shuffle' shuffle sleep sort sorted" .
+	\ " scanf sscanf" .
+	\ " stat strcat strlen strsort struniqsort" .
+	\ " sum system time tolower toupper" .
+	\ " tokens trim uniquesort unlink words" .
+	\ " dot__qquotes arg0 argv" .
+	\ " isfile isdir ispipe issymlink issocket ischardev isblockdev" .
+	\ " mayread maywrite mayexecute" .
+	\ " eval_kludge_ref_int eval_kludge_ref_float eval_kludge_ref_string" .
+	\ " eval_kludge_ref_list_int eval_kludge_ref_list_float eval_kludge_ref_list_string"
+	\ )
+
+
+" Don't highlight as a keyword when we put double colons after it.
+" ( Let it get highlighted as a package name. )
+exec 'syn match myScriptingGlobal "\%(' .
+	\ join( myKeywordList, '\|' ) .
+	\ '\)\>\%(::\)\@!"'
 
 
 "==============================================================
