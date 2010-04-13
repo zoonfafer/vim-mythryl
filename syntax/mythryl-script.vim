@@ -90,8 +90,12 @@ let myKeywordList = split( "atod atoi back__ticks basename bash chdir chomp die 
 
 
 " Don't highlight as a keyword when we put double colons after it.
-" ( Let it get highlighted as a package name. )
-exec 'syn match myScriptingGlobal "\%(' .
+" ( Let it get highlighted as a package name. ) Also don't highlight as a
+" keyword when it does not belong to the package "scripting_globals".
+"
+" Note: use of doubly-negated look-behind !!!
+"
+exec 'syn match myScriptingGlobal "\%(\%(\%(\%(make7::\|\_s\)\@<!\)\@<!scripting_globals::\|\_s\)\@<!\)\@<!\%(' .
 	\ join( myKeywordList, '\|' ) .
 	\ '\)\>\%(::\)\@!"'
 
