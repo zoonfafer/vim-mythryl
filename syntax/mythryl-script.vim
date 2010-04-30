@@ -90,14 +90,38 @@ let myKeywordList = split( "atod atoi back__ticks basename bash chdir chomp die 
 
 
 " Don't highlight as a keyword when we put double colons after it.
-" ( Let it get highlighted as a package name. ) Also don't highlight as a
-" keyword when it does not belong to the package "scripting_globals".
+" ( Let it get highlighted as a package name. )
 "
-" Note: use of doubly-negated look-behind !!!
+" Also don't highlight as a keyword when it does not belong to the package
+" "scripting_globals".
 "
-exec 'syn match myScriptingGlobal "\%(\%(\%(\%(make7::\|\_s\)\@<!\)\@<!scripting_globals::\|\_s\)\@<!\)\@<!\%(' .
-	\ join( myKeywordList, '\|' ) .
-	\ '\)\>\%(::\)\@!"'
+" This can be achieved by not matching against prefixed double-colons, except
+" when the double-colons themselves are preceded by the string
+" "scripting_globals" (and then again preceded by "make7").
+"
+" Note: use of multiply-negated look-behinds !!!
+" ([adverb]--->^^^^^^^^)
+"
+
+exec 'syn match myScriptingGlobal "'.
+	\ '\%('.
+	\     '\%('.
+	\         '\%('.
+	\             '\%('.
+	\                 'make7::\|\%(::\)\@<!'.
+	\              '\)'.
+	\              '\@<!'.
+	\          '\)'.
+	\          '\@<!'.
+	\          'scripting_globals::\|\%(::\)\@<!'.
+	\      '\)'.
+	\      '\@<!'.
+	\  '\)'.
+	\  '\@<!'.
+	\ '\%(' .
+	\     join( myKeywordList, '\|' ) .
+	\  '\)'.
+	\ '\>\%(::\)\@!"'
 
 
 "==============================================================
