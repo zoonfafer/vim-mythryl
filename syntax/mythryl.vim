@@ -73,9 +73,12 @@ syn cluster myParenBlocks contains=
 
 " Note:  This cluster contains every syntax class that has to be
 " contained in other syntax classes.
-	 " tab errors can only occur in strings, etc.
+	 " tab errors can only occur in strings,
+	 " regexp-escape characters can only occur within regexp delimiters,
+	 " etc.
 syn cluster myNotTop contains=
 	\ myTabError,
+	\ myRegexpEscape,
 
 syn cluster myFreeText contains=
 	\ @myComments,
