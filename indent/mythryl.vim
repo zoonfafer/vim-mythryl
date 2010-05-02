@@ -1,7 +1,7 @@
 " Vim indent file
 " Language:	Mythryl
 " Maintainer:	Jeffrey Lau <vim@NOSPAMjlau.tk>
-" Last Change:	2010 Feb 18 (<- most likely out-dated)
+" Last Change:	2010 May 02 (<- most likely out-dated)
 " Remark:	included by the Mythryl-script indent file
 "
 " Script Type:	indent
@@ -33,7 +33,8 @@ setlocal comments =sn1:/*,mb:*,ex:*/,b:#
 setlocal comments+=fb:- " might be useful...
 
 setlocal noexpandtab
-setlocal formatoptions+=tcroqwn
+setlocal formatoptions+=croqwn
+setlocal formatoptions-=t
 setlocal nosmartindent
 setlocal textwidth=78
 setlocal shiftwidth=4
