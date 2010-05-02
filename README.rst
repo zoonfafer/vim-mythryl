@@ -5,12 +5,13 @@
 Introduction
 ------------
 
-``vim-mythryl`` provides:
+``vim-mythryl`` aims to provide:
         - Mythryl syntax highlighting for ``*.pkg`` and ``*.api`` files,
         - Mythryl script-oriented syntax highlighting for files that begin with 
-          the shebang line (``#!.*\<mythryl\>``), and
+          the shebang line (``#!.*\<mythryl\>``),
+        - auto-indent support for Mythryl,
         - **(deprecated)** Mythryl's ``make6`` syntax highlighting for 
-          ``*.make6`` files [*]_ .
+          ``*.make6`` files [*]_ , and
         - snipMate__ support for Mythryl.
 
 .. [*] I have also included the match for ``*.standard`` files to be ``make6`` files, since I have seen files with such a suffix and they look like ``make6`` files.
@@ -33,18 +34,18 @@ Just copy ``{ftplugin,indent,snippets,syntax}/*.vim`` and
 TODO
 ----
 
-* Create indent file (**Help needed!  I don't know anything about auto-indenting for Vim.**) for Mythryl according to the `Coding Conventions <http://mythryl.org/my-Preface-11.html>`_
-        - Indentation_ 
-        - `Line stuff up`_
-        - `Case expressions`_
-        - `Record expressions`_
-        - `Except statements`_
-        - `Function definitions`_
-        - `If statements`_
-        - `?? ::`_
-        - Commenting_
+* Implement indent rules for Mythryl according to the `Coding Conventions <http://mythryl.org/my-Preface-11.html>`_
+        - Indentation_  (case- & if-statements: DONE.  Tuples: DONE.  Records: DONE.)
+        - `Line stuff up`_ (equal sign: DONE.  Fun: UNTESTED.)
+        - `Case expressions`_ (buggy)
+        - `Record expressions`_ (short form: OK.  Long form: unimplemented.)
+        - `Except statements`_ (unimplemented)
+        - `Function definitions`_ (partial)
+        - `If statements`_ (DONE.  functionality provided by snipMate)
+        - `?? ::`_ (unimplemented)
 * **(deprecated)** Create indent file for ``make6``.
-* Support the remaining syntax classes.
+* Support the remaining syntax classes:
+        - `regular expression escape characters`_
 * Keep the syntax files clean and readable.
 
 .. _Indentation: http://mythryl.org/my-Indentation.html
@@ -56,6 +57,7 @@ TODO
 .. _If statements: http://mythryl.org/my-If_statements.html
 .. _`?? ::`: http://mythryl.org/my-_____-2.html
 .. _Commenting: http://mythryl.org/my-Commenting.html
+.. _regular expression escape characters: http://mythryl.org/my-Perl5_Regular_Expression_Syntax.html
 
 
 Licence
