@@ -537,8 +537,8 @@ function! GetMythrylIndent(...)
 		let ind = s:ind + 2
 
 	elseif   this_line  =~  '^\s*)'
-		let ind = s:ind - 2
-
+		" let ind = s:ind - 2
+		let ind = indent( PreviousMatching( '(', ')' )['start']['lnum'] )
 
 	""" record / code block braces:
 	" How:
