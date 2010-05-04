@@ -133,9 +133,9 @@ endfunc
 function! PreviousMatching(start_regex, end_regex, ...)
 
 	" First of all, move our cursor up, ...
-	call cursor( [line('.') - 1, col('.')] )
+	call cursor( line('.') - 1 )
 	" ... then shove it to the end of line.
-	call cursor( [line('.'), col('$')] )
+	call cursor( line('.') , col('$') )
 	" Observations:  If we do the two operations all in one go (move up a
 	" line and move to the end of the line), i.e.
 	"
@@ -387,14 +387,14 @@ function! GetMythrylIndent(...)
 	" is specially indented.
 	let pnclnum   = pnblnum
 
-	" The following just checks the first column...
-	" ... which is good enough, because this is just sufficient to match
-	" against a multi-line comment which spans over >=2 lines, which in
-	" turn is just the case that we're interested in (i.e. the case that
-	" is the most problematic).
-	while synIDattr(synID(pnclnum, 1, 1),'name') =~ "Comment$"
+	" The following just checks the last column... 
+	" ... which is the surefire way of knowing whether the line ends with
+	" comment or not.
+	call cursor( pnclnum, col('$') )
+	while synIDattr(synID(pnclnum, col('$') - 1, 1),'name') =~ "Comment$"
 	\ &&  pnclnum  >  0
 		let pnclnum = prevnonblank( pnclnum - 1 )
+		call cursor( pnclnum, col('$') )
 	endwhile
 
 	" Get previous non-comment line
@@ -410,6 +410,33 @@ function! GetMythrylIndent(...)
 
 
 	"{{{=================================================================
+	"      Custom Comment Indent Rule:
+	"
+	"}}}=================================================================
+
+	if prev_line =~ '/\*'
+		" let ind = indent( pnblnum ) + 1
+		let s:match_position = match( prev_line, '/\*' )
+		if s:is_comment( pnblnum, s:match_position + 1 )
+			" let ind = virtcol (
+			return virtcol (
+				\ [ pnblnum,
+				\   s:match_position
+				\ ]
+				\) + 1
+		endif
+
+	elseif prev_line =~ '^\s*\*\%(/\)\@!'
+		let s:match_position = match( prev_line, '^\s*\*' )
+		if s:is_comment( pnblnum, s:match_position + 1 )
+			" let ind = indent( pnblnum )
+			return indent( pnblnum )
+		endif
+	endif
+
+
+
+	"{{{=================================================================
 	"  1) Indent four blanks per nested scope,
 	"     with exceptions (2), (3) & (4).
 	"}}}=================================================================
@@ -418,16 +445,14 @@ function! GetMythrylIndent(...)
 	" Skip if the line also contains the ending for the above 'openings'.
 	" if   prev_ncline  =~  '^\s*\%(fun\|for\|except\|where\|stipulate\|herein\)\>'
 	if   prev_ncline  =~  '^\s*\%(for\|where\|stipulate\|herein\)\>'
-		if   prev_ncline  !~  'end\>[[:space:];]*$'
-			let ind = s:ind + 4
-		endif
+	\&&  prev_ncline  !~  'end\>[[:space:];]*$'
+		let ind = s:ind + 4
 
 	" multi-case "fun", "except", "fn"
-	elseif   prev_ncline  =~  '^\s*\%(fun\|fn\|except\)\>'
-		" XXX: need cleanup   ...........\@!
-		if   prev_ncline  !~  '\%(=\%(>\)\@!.*\|end\>\)[[:space:];]*$'
-			let ind = s:ind + 4
-		endif
+	elseif prev_ncline  =~  '^\s*\%(fun\|fn\|except\)\>'
+	\&&    prev_ncline  !~  '\%(=\%(>\)\@!.*\|end\>\);[[:space:];]*$'
+	" XXX: need cleanup   .............\@!
+		let ind = s:ind + 4
 
 	" Indent if "my|val" definition hasn't ended yet.
 	" 'Ended' means to have been terminated with a semi-colon, ';'.
@@ -463,9 +488,8 @@ function! GetMythrylIndent(...)
 	"}}}=================================================================
 
 	elseif   prev_ncline  =~  '^\s*case\>'
-		if   prev_ncline  !~  'esac\>[[:space:];]*$'
-			let ind = s:ind + 5
-		endif
+	\&&      prev_ncline  !~  'esac\>[[:space:];]*$'
+		let ind = s:ind + 5
 
 	elseif   this_line  =~  '^\s*esac\>'
 		let ind = s:ind - 5
@@ -508,11 +532,9 @@ function! GetMythrylIndent(...)
 	
 
 	""" tuple:
-	elseif   prev_ncline  =~  '(\s*\%(\s[^)]*\)\?'
-		" if   prev_ncline  !~  ')[[:space:];]*$'
-		if   prev_ncline  !~  ')[^(]*$'
-			let ind = s:ind + 2
-		endif
+	elseif   prev_ncline  =~  '(\s*\%(\s[^)]*\)\?$'
+	\&&      prev_ncline  !~  ')[^(]*;[[:space:];]*$'
+		let ind = s:ind + 2
 
 	elseif   this_line  =~  '^\s*)'
 		let ind = s:ind - 2
@@ -780,28 +802,6 @@ function! GetMythrylIndent(...)
 	elseif NeedEqualSignDeindent( pnblnum )
 		let ind = s:ind - 4
 
-
-	"{{{=================================================================
-	"      Custom Comment Indent Rule:
-	"
-	"}}}=================================================================
-
-	elseif prev_line =~ '/\*'
-		" let ind = indent( pnblnum ) + 1
-		let s:match_position = match( prev_line, '/\*' )
-		if s:is_comment( pnblnum, s:match_position + 1 )
-			let ind = virtcol (
-				\ [ pnblnum,
-				\   s:match_position
-				\ ]
-				\) + 1
-		endif
-
-	elseif prev_line =~ '^\s*\*\%(/\)\@!'
-		let s:match_position = match( prev_line, '^\s*\*' )
-		if s:is_comment( pnblnum, s:match_position + 1 )
-			let ind = indent( pnblnum )
-		endif
 
 
 	" "{{{-----------------------------------------------------------------
