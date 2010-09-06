@@ -172,6 +172,7 @@ syn region myMultilineComment fold
 "--------------------------------------------------------------
 
 let s:LowercaseId = "[a-z][_'a-z0-9]*"
+let s:IntId = "-\?\d\+"
 execute "syn match myLowercaseName contains=NONE" .
 	\ ' "' . s:LowercaseId . '"'
 
@@ -350,7 +351,9 @@ execute 'syn region myChar contains=myCharEscape' .
 
 syn match myFloat	"-\?\d\+\%(\.\d\+\)\?\%([eE]-\?\d\+\)\?"
 syn match myOct		"-\?0[0-7]\+"
-syn match myInt		"-\?\d\+"
+
+exec 'syn match myInt	"' . s:IntId . '"'
+
 syn match myUnsignedInt	"-\?0u\d\+"
 syn match myHex		"-\?0x[0-9a-fA-F]\+"
 syn match myUnsignedHex	"-\?0ux[0-9a-fA-F]\+"
