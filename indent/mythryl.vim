@@ -22,6 +22,7 @@ setlocal indentkeys+==case,=esac
 setlocal indentkeys+==for,=fun,=fn,=end
 setlocal indentkeys+==herein
 setlocal indentkeys+=={,=},=(,=),=[,=]
+" setlocal indentkeys+===>
 
 " trigger indent when you hit "o" or "O" in normal-mode:-
 setlocal indentkeys +=o,O
@@ -566,6 +567,17 @@ function! GetMythrylIndent(...)
 	" let s:brace_text_regexp = '{\s*\%(\s[^}]*\)\?'
 	" if   prev_ncline  =~  '{\s*\%(\s[^}]*\)\?'
 	elseif   prev_ncline  =~  '{\s\+\%([^}]*\)\?$'
+
+		" """  Indent for "=>" in records XXX not gonna work.
+		" Not_gonna_work: because matching "=>" can imply that you're 
+		" inside a record, case switch, except switch, or a multi-line 
+		" function definition, all of which have different indent 
+		" rules.
+		"
+		" " elseif   prev_ncline  =~  '{ [^{}[:space:]]*$'
+		" if   this_line    =~  '=>$'
+			" let ind = s:ind + 6
+
 
 		" if   prev_ncline  !~  ')[[:space:];]*$'
 		" if   prev_ncline  !~  '}[^{]*$'

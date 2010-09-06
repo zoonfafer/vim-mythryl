@@ -181,6 +181,14 @@ execute "syn match myPackageName" .
 execute "syn match myPackageColonColon " .
 	\ ' "\%(' . s:LowercaseId . '\)\@<=::"'
 
+" " imprecise matching: (matches blank chars before the real identifier)
+" XXX: The following only matches the first occurrence after `{'.
+" execute "syn match myRecordIdentifier" .
+	" \ ' "\%({\_s*\)\@<=\%(\_s*' . s:LowercaseId . '\|' . s:IntId . '\)\%(\_s\+=>\)\@="'
+" " XXX: Why does the following NOT work?  Inserting more than one newline 
+" "      between "{" and the identifier will not match.
+	" " \ ' "\%({\_s*\)\@<=\%(' . s:LowercaseId . '\|' . s:IntId . '\)\%(\_s\+=>\)\@="'
+
 """ my / val
 syn match myError	"\<my\>"
 syn match myError	"\<val\>"
@@ -456,6 +464,8 @@ if version >= 508 || !exists("did_my_syntax_inits")
 	if exists("my_highlight_all_lowercase_id")
 	HL myLowercaseName	Function
 	endif
+
+	" HL myRecordIdentifier	Identifier
 
 	HL myPackageName	Identifier
 	HL myPackageColonColon	Special
