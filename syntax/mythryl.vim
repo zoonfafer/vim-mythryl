@@ -79,6 +79,7 @@ syn cluster myParenBlocks contains=
 syn cluster myNotTop contains=
 	\ myTabError,
 	\ myRegexpEscape,
+	\ myRegexpSpecial
 
 syn cluster myFreeText contains=
 	\ @myComments,
@@ -297,11 +298,35 @@ endfunc
 """ TODO: *** regular expression escapes will need LOTS of work !!! ***
 syn match myRegexpEscape contained containedin=myRegexp +\%([.^$|*+?]\|\\\%(\\\|\^[@A-F\[\\\]^_?]\|[/AaBbDdefnrSstvWwZz]\|[01]\d\d\|2\%([0-4]\d\|5[0-5]\)\)\)+
 
-syn region myRegexp contains=myRegexpEscape
+syn region myRegexp contains=myRegexpEscape,@myRegexpSpecial
 	\ matchgroup=myRegexpDelimiter
 	\ start='\./'
 	\ skip='\\/'
 	\ end=+/+
+
+
+""" START copypasta'd from ruby.vim
+syn region myRegexpParens	matchgroup=myRegexpSpecial   start="(\(?:\|?<\=[=!]\|?>\|?<[a-z_]\w*>\|?[imx]*-[imx]*:\=\|\%(?#\)\@!\)"	skip="\\)"  end=")"  contained transparent contains=@myRegexpSpecial
+syn region myRegexpBrackets	matchgroup=myRegexpCharClass start="\[\^\=" skip="\\\]" end="\]" contained transparent contains=myStringEscape,myRegexpEscape,myRegexpCharClass oneline
+syn match  myRegexpCharClass	"\\[DdHhSsWw]"		contained display
+syn match  myRegexpCharClass	"\[:\^\=\%(alnum\|alpha\|ascii\|blank\|cntrl\|digit\|graph\|lower\|print\|punct\|space\|upper\|xdigit\):\]"		contained
+syn match  myRegexpEscape	"\\[].*?+^$|\\/(){}[]"	contained display
+syn match  myRegexpQuantifier	"[*?+][?+]\="		contained display
+syn match  myRegexpQuantifier	"{\d\+\%(,\d*\)\=}?\="	contained display
+syn match  myRegexpAnchor	"[$^]\|\\[ABbGZz]"	contained display
+syn match  myRegexpDot		"\."			contained display
+syn match  myRegexpSpecial	"|"			contained display
+syn match  myRegexpSpecial	"\\[1-9]\d\=\d\@!"	contained display
+syn match  myRegexpSpecial	"\\k<\%([a-z_]\w*\|-\=\d\+\)\%([+-]\d\+\)\=>" contained display
+syn match  myRegexpSpecial	"\\k'\%([a-z_]\w*\|-\=\d\+\)\%([+-]\d\+\)\='" contained display
+syn match  myRegexpSpecial	"\\g<\%([a-z_]\w*\|-\=\d\+\)>" contained display
+syn match  myRegexpSpecial	"\\g'\%([a-z_]\w*\|-\=\d\+\)'" contained display
+
+syn cluster myStringSpecial		contains=myInterpolation,myNoInterpolation,myStringEscape
+syn cluster myExtendedStringSpecial	contains=@myStringSpecial,myNestedParentheses,myNestedCurlyBraces,myNestedAngleBrackets,myNestedSquareBrackets
+syn cluster myRegexpSpecial		contains=myInterpolation,myNoInterpolation,myStringEscape,myRegexpSpecial,myRegexpEscape,myRegexpBrackets,myRegexpCharClass,myRegexpDot,myRegexpQuantifier,myRegexpAnchor,myRegexpParens,myRegexpComment
+
+""" END copypasta'd from ruby.vim
 
 """ String
 " Note: Mythryl doesn't allow tab characters in strings...
@@ -480,7 +505,12 @@ if version >= 508 || !exists("did_my_syntax_inits")
 	""" String, regexp, char
 	HL myRegexp		String
 	HL myRegexpDelimiter	Delimiter
-	HL myRegexpEscape	Special
+	HL myRegexpEscape	myRegexpSpecial
+	HL myRegexpQuantifier	myRegexpSpecial
+	HL myRegexpAnchor	myRegexpSpecial
+	HL myRegexpDot		myRegexpCharClass
+	HL myRegexpCharClass	myRegexpSpecial
+	HL myRegexpSpecial	Special
 
 	HL myString		String
 	HL myStringDelimiter	Delimiter
